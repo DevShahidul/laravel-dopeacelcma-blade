@@ -5,8 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\User;
-use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(
             CountrySeeder::class
         );
-        
+
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         User::create([

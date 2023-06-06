@@ -12,7 +12,7 @@ class NgoController extends Controller
      */
     public function index()
     {
-        return view('ngo.index');
+        return view('pages.ngo.index');
     }
 
     /**
