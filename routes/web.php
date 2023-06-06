@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function (){
-        return view('dashboard');
+        return view('pages.dashboard');
     })->name('dashboard');
     Route::get('/ngo', [NgoController::class, 'index'])->name('ngo');
 });
