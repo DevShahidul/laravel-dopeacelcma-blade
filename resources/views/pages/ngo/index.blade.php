@@ -13,7 +13,7 @@
         <x-auth-session-status class="mt-4" :status="session('message')" />
     </x-slot>
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
-        @include('components.table')
+        <x-table :tabledata="$ngos" />
         @include('components.pagination')
     </div>
 </x-app-layout>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -15,7 +14,8 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        return view('pages.user.index');
+        $users = User::all();
+        return view('pages.user.index', compact('users'));
     }
 
     /**
@@ -31,13 +31,14 @@ class UserController extends Controller
      */
     public function store(UserStoreRequest $request)
     {
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        return "I'm working";
+        // User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        // ]);
 
-        return redirect()->route('user.index')->with('message', 'User Register Successfully!');
+        // return redirect()->route('user.index')->with('message', 'User Register Successfully!');
     }
 
     /**

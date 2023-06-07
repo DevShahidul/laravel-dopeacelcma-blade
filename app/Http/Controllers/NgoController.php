@@ -13,7 +13,8 @@ class NgoController extends Controller
      */
     public function index()
     {
-        return view('pages.ngo.index');
+        $ngos = Ngo::all();
+        return view('pages.ngo.index', compact('ngos'));
     }
 
     /**
