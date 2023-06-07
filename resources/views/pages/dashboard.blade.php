@@ -1,6 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Dashboard') }}
+        <div class="my-6 flex items-center justify-between">
+            <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                {{ __('Dashboard') }}
+            </h2>
+        </div>
     </x-slot>
 
     <div class="p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">

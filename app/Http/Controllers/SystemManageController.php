@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\r;
 use Illuminate\Http\Request;
 
-class NgoController extends Controller
+class SystemManageController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.ngo.index');
+        //
     }
 
     /**
@@ -20,7 +19,7 @@ class NgoController extends Controller
      */
     public function create()
     {
-        return view('pages.ngo.form');
+        //
     }
 
     /**

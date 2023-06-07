@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\LearningCenterController;
 use App\Http\Controllers\NgoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\SystemManageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 // Route::get('/dashboard', function () {
@@ -27,7 +30,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function (){
         return view('pages.dashboard');
     })->name('dashboard');
-    Route::get('/ngo', [NgoController::class, 'index'])->name('ngo');
+    Route::get('/system-management', [SystemManageController::class, 'index'])->name('system.index');
+    Route::get('/ngo', [NgoController::class, 'index'])->name('ngo.index');
+    Route::get('/ngo/create', [NgoController::class, 'create'])->name('ngo.create');
+    Route::get('/staff', [StaffController::class, 'index'])->name('staff.index');
+    Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
+    Route::get('/learning-center', [LearningCenterController::class, 'index'])->name('learningCenter.index');
 });
 
 Route::middleware('auth')->group(function () {
