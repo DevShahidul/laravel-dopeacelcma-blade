@@ -19,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return redirect('/login');
     return view('welcome');
-});
+})->middleware('guest');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -32,8 +31,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('pages.dashboard');
     })->name('dashboard');
     Route::get('/system-management', [SystemManageController::class, 'index'])->name('system.index');
+
     Route::get('/ngo', [NgoController::class, 'index'])->name('ngo.index');
     Route::get('/ngo/create', [NgoController::class, 'create'])->name('ngo.create');
+    Route::post('/ngo/create', [NgoController::class, 'store'])->name('ngo.store');
+    
     Route::get('/staff', [StaffController::class, 'index'])->name('staff.index');
     Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
     Route::get('/learning-center', [LearningCenterController::class, 'index'])->name('learningCenter.index');

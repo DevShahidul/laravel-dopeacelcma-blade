@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Ngo extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'country_id', 'state_id', 'city_id', 'address', 'zip_code'];
 }

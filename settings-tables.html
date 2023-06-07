@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | Tables</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <main class="bg-body min-h-screen w-full max-w-full overflow-hidden flex">
+      <!-- Beginning sidebar -->
+      <aside class="h-screen fixed left-0 top-0 z-[9999] -translate-x-full md:translate-x-0 w-[295px] md:w-[86px] xl:w-[295px] py-4 px-6 bg-white shadow-main overflow-y-auto">
+        <div class="flex flex-col h-full space-y-[30px]">
+          <a href="../index.html" class="inline-block w-10">
+            <img src="../images/LogoSquare.png" alt="Logo" class="w-10 h-10">
+          </a>
+          <div class="w-full flex items-center md:justify-center xl:justify-start space-x-[10px]">
+            <a href="#" class="w-6 h-6 min-w-[24px] text-center">
+              <img src="../images/arrow-left.png" alt="Arrow left">
+            </a>
+            <h2 class="font-normal md:hidden xl:inline-block">Settings</h2>
+          </div>
+          <div class="rounded-2xl bg-white md:bg-transparent xl:bg-white shadow-main md:shadow-none xl:shadow-main py-[10px] md:py-0 md:space-y-1 xl:space-y-0 xl:py-[10px]">
+            <a href="settings-api-key.html" class="w-full flex rounded items-center group px-4 md:px-[6px] xl:px-4 py-3 md:py-[6px] xl:py-3 hover:bg-primary hover:text-white space-x-[10px] after:ml-auto after:bg-check-green after:w-6 after:h-6 after:inline-block">
+              <figure class="w-6 h-6 min-w-[24px] flex items-center justify-center">
+                <img src="../images/key-black.png" alt="Key icon black" class="group-hover:hidden">
+                <img src="../images/key-white.png" alt="Key icon black" class="hidden group-hover:block">
+              </figure>
+              <span class="inline-block md:hidden xl:inline-block">API key</span>
+            </a>
+            <a href="settings-tables.html" class="w-full flex rounded items-center group px-4 md:px-[6px] xl:px-4 py-3 md:py-[6px] xl:py-3 hover:bg-primary hover:text-white space-x-[10px]">
+              <figure class="w-6 h-6 min-w-[24px] flex items-center justify-center">
+                <img src="../images/settings-black.png" alt="Key icon black" class="group-hover:hidden">
+                <img src="../images/settings-white.png" alt="Key icon black" class="hidden group-hover:block">
+              </figure>
+              <span class="inline-block md:hidden xl:inline-block">Tables</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <!-- //End sidebar -->
+      <div class="flex-grow max-w-full relative md:pl-[86px] xl:pl-[295px] pb-20">
+        <!-- Beginning header section -->
+        <header class="w-full flex py-15px px-5">
+          <div class="flex items-center ml-auto space-x-4 relative">
+            <span class="bg-blue-10 rounded px-4 py-1 inline-block text-sm">Jenny</span>
+            <figure class="rounded-full w-10 h-10 flex items-center justify-center bg-[#F7F7F7]">
+              <img src="../images/jenny-avatar.png" alt="Jenny" class="w-full h-full object-cover object-center">
+            </figure>
+            <button class="flex w-6 h-6 items-center justify-center cursor-pointer">
+              <img src="../images/chevron-down.png" alt="Chevron down" class="w-[10px] h-[6px]">
+            </button>
+            <div class="hidden absolute right-0 top-full mt-3 z-10 bg-white rounded-2xl shadow-main py-1 space-y-2 min-w-[220px]">
+              <a href="./settings-api-key.html" class="group flex items-center justify-end w-full px-8 py-3 space-x-4 hover:bg-primary hover:text-white rounded">
+                <span class="inline-block">Settings</span>
+                <figure class="w-6 h-6 flex items-center justify-center">
+                  <img src="../images/settings-black.png" alt="Key icon black" class="group-hover:hidden">
+                  <img src="../images/settings-white.png" alt="Key icon black" class="hidden group-hover:block">
+                </figure>
+              </a>
+              <div class="w-full h-[1px] bg-[#11072C] opacity-10"></div>
+              <a href="../index.html" class="group flex items-center justify-end w-full px-8 py-3 space-x-4 hover:bg-primary hover:text-white rounded">
+                <span class="inline-block">Logout</span>
+                <figure class="w-6 h-6 flex items-center justify-center">
+                  <img src="../images/close-black.png" alt="Close icon black" class="group-hover:hidden">
+                  <img src="../images/close-white.png" alt="Close icon black" class="hidden group-hover:block">
+                </figure>
+              </a>
+            </div>
+          </div>
+        </header>
+        <!-- //End header section -->
+        <!-- Beginning page content section -->
+        <section class="py-4 pl-5 sm:pl-8 lg:pl-15 pr-5 sm:pr-6 lg:pr-9 space-y-30px relative">
+          <h2>Table Configuration</h2>
+          <div class="space-y-[10px]">
+            <!-- Beginning field item -->
+            <div class="w-full shadow-main bg-body rounded">
+              <div class="bg-white rounded py-15px px-5 flex flex-col md:flex-row md:items-center">
+                <p class="flex items-center space-x-[10px]"><span class="font-bold text-default">Companies</span> <span class="text-info">Companies</span></p>
+                <div class="w-full md:w-auto md:ml-auto mt-3 md:mt-0 flex-row-reverse md:flex-row md:space-x-[10px] flex items-center">
+                  <button class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto md:ml-0">
+                    <img src="../images/trash-icon-black.png" alt="Trash icon">
+                  </button>
+                  <button class="flex items-center justify-center space-x-[5px] bg-white shadow-btn px-[15px] py-[5px] rounded">
+                    <span class="text-bold text-label">Hide Details</span>
+                    <figure class="w-6 h-6 flex items-center justify-center">
+                      <img src="../images/chevron-down.png" alt="Chevron down">
+                    </figure>
+                  </button>
+                </div>
+              </div>
+              <div class="space-y-5 p-5 transition-all">
+                <div class="flex items-center">
+                  <span class="text-[10px] text-default uppercase font-semibold">Table Fields</span>
+                  <button class="text-[10px] text-theme-red uppercase font-semibold ml-auto">Remove All</button>
+                </div>
+                <div class="w-full pt-15px space-y-30px">
+                  <!-- Beginning table field -->
+                  <div class="flex flex-wrap md:flex-nowrap items-center space-y-4 md:space-y-0 md:space-x-15px">
+                    <button class="w-4 h-4 min-w-fit flex items-center justify-center order-first">
+                      <img src="../images/burger-menu-gray.png" alt="Burger menu icon">
+                    </button>
+                    <div class="w-full md:w-36 min-w-fit relative">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Field name</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <div class="w-full md:w-[239px] min-w-fit">
+                      <input type="text" id="key" name="key" placeholder="Key" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                    </div>
+                    <div class="w-full md:w-36 relative min-w-fit">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Select type</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <button class="w-6 h-6 min-w-fit flex items-center justify-center !mt-0 -order-1 md:order-last ml-auto md:ml-0">
+                      <img src="../images/trash-icon-black.png" alt="Trash icon">
+                    </button>
+                  </div>
+                  <!-- //End table field -->
+                  <!-- Beginning table field -->
+                  <div class="flex flex-wrap md:flex-nowrap items-center space-y-4 md:space-y-0 md:space-x-15px">
+                    <button class="w-4 h-4 min-w-fit flex items-center justify-center order-first">
+                      <img src="../images/burger-menu-gray.png" alt="Burger menu icon">
+                    </button>
+                    <div class="w-full md:w-36 min-w-fit relative">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Field name</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <div class="w-full md:w-[239px] min-w-fit">
+                      <input type="text" id="key" name="key" placeholder="Key" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                    </div>
+                    <div class="w-full md:w-36 relative min-w-fit">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Select type</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <button class="w-6 h-6 min-w-fit flex items-center justify-center !mt-0 -order-1 md:order-last ml-auto md:ml-0">
+                      <img src="../images/trash-icon-black.png" alt="Trash icon">
+                    </button>
+                  </div>
+                  <!-- //End table field -->
+                  <!-- Beginning table field -->
+                  <div class="flex flex-wrap md:flex-nowrap items-center space-y-4 md:space-y-0 md:space-x-15px">
+                    <button class="w-4 h-4 min-w-fit flex items-center justify-center order-first">
+                      <img src="../images/burger-menu-gray.png" alt="Burger menu icon">
+                    </button>
+                    <div class="w-full md:w-36 min-w-fit relative">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Field name</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <div class="w-full md:w-[239px] min-w-fit">
+                      <input type="text" id="key" name="key" placeholder="Key" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                    </div>
+                    <div class="w-full md:w-36 relative min-w-fit">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Select type</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <button class="w-6 h-6 min-w-fit flex items-center justify-center !mt-0 -order-1 md:order-last ml-auto md:ml-0">
+                      <img src="../images/trash-icon-black.png" alt="Trash icon">
+                    </button>
+                  </div>
+                  <!-- //End table field -->
+                  <!-- Beginning table field -->
+                  <div class="flex flex-wrap md:flex-nowrap items-center space-y-4 md:space-y-0 md:space-x-15px">
+                    <button class="w-4 h-4 min-w-fit flex items-center justify-center order-first">
+                      <img src="../images/burger-menu-gray.png" alt="Burger menu icon">
+                    </button>
+                    <div class="w-full md:w-36 min-w-fit relative">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Field name</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <div class="w-full md:w-[239px] min-w-fit">
+                      <input type="text" id="key" name="key" placeholder="Key" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                    </div>
+                    <div class="w-full md:w-36 relative min-w-fit">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Select type</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <button class="w-6 h-6 min-w-fit flex items-center justify-center !mt-0 -order-1 md:order-last ml-auto md:ml-0">
+                      <img src="../images/trash-icon-black.png" alt="Trash icon">
+                    </button>
+                  </div>
+                  <!-- //End table field -->
+                  <!-- Beginning table field -->
+                  <div class="flex flex-wrap md:flex-nowrap items-center space-y-4 md:space-y-0 md:space-x-15px">
+                    <button class="w-4 h-4 min-w-fit flex items-center justify-center order-first">
+                      <img src="../images/burger-menu-gray.png" alt="Burger menu icon">
+                    </button>
+                    <div class="w-full md:w-36 min-w-fit relative">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Field name</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <div class="w-full md:w-[239px] min-w-fit">
+                      <input type="text" id="key" name="key" placeholder="Key" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                    </div>
+                    <div class="w-full md:w-36 relative min-w-fit">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Select type</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <button class="w-6 h-6 min-w-fit flex items-center justify-center !mt-0 -order-1 md:order-last ml-auto md:ml-0">
+                      <img src="../images/trash-icon-black.png" alt="Trash icon">
+                    </button>
+                  </div>
+                  <!-- //End table field -->
+                  <!-- Beginning table field -->
+                  <div class="flex flex-wrap md:flex-nowrap items-center space-y-4 md:space-y-0 md:space-x-15px">
+                    <button class="w-4 h-4 min-w-fit flex items-center justify-center order-first">
+                      <img src="../images/burger-menu-gray.png" alt="Burger menu icon">
+                    </button>
+                    <div class="w-full md:w-36 min-w-fit relative">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Field name</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <div class="w-full md:w-[239px] min-w-fit">
+                      <input type="text" id="key" name="key" placeholder="Key" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                    </div>
+                    <div class="w-full md:w-36 relative min-w-fit">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Select type</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <button class="w-6 h-6 min-w-fit flex items-center justify-center !mt-0 -order-1 md:order-last ml-auto md:ml-0">
+                      <img src="../images/trash-icon-black.png" alt="Trash icon">
+                    </button>
+                  </div>
+                  <!-- //End table field -->
+                  <!-- Beginning table field -->
+                  <div class="flex flex-wrap md:flex-nowrap items-center space-y-4 md:space-y-0 md:space-x-15px">
+                    <button class="w-4 h-4 min-w-fit flex items-center justify-center order-first">
+                      <img src="../images/burger-menu-gray.png" alt="Burger menu icon">
+                    </button>
+                    <div class="w-full md:w-36 min-w-fit relative">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Field name</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <div class="w-full md:w-[239px] min-w-fit">
+                      <input type="text" id="key" name="key" placeholder="Key" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                    </div>
+                    <div class="w-full md:w-36 relative min-w-fit">
+                      <button class="w-full rounded-[10px] bg-white flex items-center border border-theme-gray py-3 px-4 text-sm text-label font-normal peer">
+                        <span class="whitespace-nowrap">Select type</span>
+                        <figure class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto">
+                          <img src="../images/chevron-down.png" alt="Chevron down">
+                        </figure>
+                      </button>
+                      <ul class="hidden peer-focus:block absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-theme-gray rounded bg-white shadow-main ring-1 ring-theme-gray ring-opacity-5 focus:outline-none overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">End Markets</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-2">Companies</li>
+                        <li href="#" class="text-default block px-4 py-3 text-sm hover:bg-primary hover:text-white cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-3">End Markets</li>
+                      </ul>
+                    </div>
+                    <button class="w-6 h-6 min-w-fit flex items-center justify-center !mt-0 -order-1 md:order-last ml-auto md:ml-0">
+                      <img src="../images/trash-icon-black.png" alt="Trash icon">
+                    </button>
+                  </div>
+                  <!-- //End table field -->
+                </div>
+                <div class="w-full">
+                  <button class="flex items-center space-x-2">
+                    <figure class="flex items-center justify-center w-6 h-6">
+                      <img src="../images/add-icon.png" alt="Add icon">
+                    </figure>
+                    <span>Add field</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- //End field item -->
+
+            <!-- Beginning field item -->
+            <div class="w-full shadow-main bg-body rounded">
+              <div class="bg-white rounded py-15px px-5 flex flex-col md:flex-row md:items-center">
+                <p class="flex items-center space-x-[10px]"><span class="font-bold text-default">EndMarkets</span> <span class="text-info">End Markets</span></p>
+                <div class="w-full md:w-auto md:ml-auto mt-3 md:mt-0 flex-row-reverse md:flex-row md:space-x-[10px] flex items-center">
+                  <button class="w-6 h-6 min-w-fit flex items-center justify-center ml-auto md:ml-0">
+                    <img src="../images/trash-icon-black.png" alt="Trash icon">
+                  </button>
+                  <button class="flex items-center justify-center space-x-[5px] bg-white shadow-btn px-[15px] py-[5px] rounded">
+                    <span class="text-bold text-label">Hide Details</span>
+                    <figure class="w-6 h-6 flex items-center justify-center">
+                      <img src="../images/chevron-down.png" alt="Chevron down">
+                    </figure>
+                  </button>
+                </div>
+              </div>
+              <div class="space-y-5 p-5 transition-all">
+                <div class="space-x-[10px] text-info flex items-center">
+                  <figure class="flex items-center justify-center w-6 h-6">
+                    <img src="../images/info-gray.png" alt="Info icon">
+                  </figure>
+                  <p>There are no fields attached to this table.</p>
+                </div>
+                <div class="w-full">
+                  <button class="flex items-center space-x-2">
+                    <figure class="flex items-center justify-center w-6 h-6">
+                      <img src="../images/add-icon.png" alt="Add icon">
+                    </figure>
+                    <span>Add field</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- //End field item -->
+          </div>
+          <div class="space-x-[10px] text-info flex items-center">
+            <figure class="flex items-center justify-center w-6 h-6">
+              <img src="../images/info-gray.png" alt="Info icon">
+            </figure>
+            <p>There are no tables yet.</p>
+          </div>
+          <div class="w-full">
+            <button class="flex items-center space-x-2">
+              <figure class="flex items-center justify-center w-6 h-6">
+                <img src="../images/add-icon.png" alt="Add icon">
+              </figure>
+              <span>Add Table</span>
+            </button>
+          </div>
+          <div class="max-w-full space-y-4">
+            <button class="px-6 h-11 bg-theme-red hover:bg-theme-red-dark transition-all duration-300 text-white flex justify-center disabled:bg-theme-gray disabled:text-disabled items-center text-sm font-bold rounded">Finish Configuration</button>
+          </div>
+        </section>
+
+        <div class="absolute left-0 top-0 w-full h-screen z-50 px-4 overflow-y-auto hidden">
+          <div class="flex mx-auto w-[450px] max-w-full items-center justify-center my-7 popup-inner">
+            <div class="rounded-2xl bg-white shadow-main w-[450px] max-w-full">
+              <div class="p-[25px] space-y-[25px]">
+                <div class="flex items-center">
+                  <h2 class="mr-4">New Table</h2>
+                  <button class="ml-auto w-6 h-6 flex justify-center items-center">
+                    <img src="../images/close-black.png" alt="Close icon">
+                  </button>
+                </div>
+                <div class="w-full space-y-5">
+                  <div class="space-y-[5px] w-full">
+                    <label for="table-name" class="font-bold text-label text-xs">Table name</label>
+                    <input type="table-name" id="table-name" name="table-name" placeholder="e.g. Company" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                  </div>
+                  <div class="space-y-[5px] w-full">
+                    <label for="table-alias" class="font-bold text-label text-xs">Alias</label>
+                    <input type="table-alias" id="table-alias" name="table-alias" placeholder="e.g. My Company" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                  </div>
+                  <div class="space-y-[5px] w-full">
+                    <label for="table-id" class="font-bold text-label text-xs">Table ID</label>
+                    <input type="table-id" id="table-id" name="table-id" placeholder="tbllkjnl7890lka" class="py-3 px-4 border border-theme-gray rounded-[10px] text-sm text-label font-normal w-full focus:outline-none focus:shadow-none focus:border-primary">
+                  </div>
+                </div>
+              </div>
+              <div class="border-t border-theme-gray px-[25px] py-5 flex justify-end">
+                <button class="ml-auto bg-primary hover:bg-[#005BE1] transition-all duration-300 text-white flex space-x-[10px] py-[11px] px-5 rounded">
+                  <span>Add</span>
+                  <figure class="w-6 h-6 flex items-center justify-center">
+                    <img src="../images/check-white.png" alt="Check white">
+                  </figure>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure class="absolute -left-32 md:-left-3 xl:left-44 -bottom-36 md:-bottom-32">
+          <img src="../images/circle-frame.png" alt="Circle frame">
+        </figure>
+      </div>
+    </main>
+  </body>
+
+</html>

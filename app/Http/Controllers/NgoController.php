@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\r;
+use App\Http\Requests\NgoStoreRequest;
+use App\Models\Ngo;
 use Illuminate\Http\Request;
 
 class NgoController extends Controller
@@ -26,9 +27,18 @@ class NgoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(NgoStoreRequest $request)
     {
-        //
+        Ngo::create([
+            'name' => $request->name, 
+            'country_id' => $request->country_id,
+            'state_id' => $request->state_id, 
+            'city_id' => $request->city_id, 
+            'zip_code' => $request->zip_code,
+            'address' => $request->address
+        ]);
+
+        return redirect()->route('ngo.index')->with('message', 'Ngo created successfully!');
     }
 
     /**
