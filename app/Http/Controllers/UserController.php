@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -23,7 +24,7 @@ class UserController extends Controller
      */
     public function create(): View
     {
-        return view('pages.user.form');
+        return view('pages.user.create');
     }
 
     /**
@@ -31,14 +32,13 @@ class UserController extends Controller
      */
     public function store(UserStoreRequest $request)
     {
-        return "I'm working";
-        // User::create([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'password' => Hash::make($request->password),
-        // ]);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-        // return redirect()->route('user.index')->with('message', 'User Register Successfully!');
+        return redirect()->route('user.index')->with('message', 'User Register Successfully!');
     }
 
     /**
@@ -53,16 +53,23 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
-        //
+    { 
+        $user = User::findOrFail($id);
+        return view('pages.user.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UserUpdateRequest $request, $id)
     {
-        //
+        dd($request->all());
+        // $user->update([
+        //     'name' => $request->name,
+        //     'email' => $request->email
+        // ]);
+
+        return redirect()->route('user.index')->with('message', "User updated Successfully!");
     }
 
     /**

@@ -53,7 +53,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/user', 'index')->name('user.index');
         Route::post('/user', 'store')->name('user.store');
         Route::get('/user/create', 'create')->name('user.create');
-        Route::get('/user/edit', 'edit')->name('user.edit');
+        Route::get('/user/show', 'show')->name('user.show');
+        Route::get('/user/edit/{id}', 'edit')->name('user.edit');
+        Route::put('/user/update/{id}', 'update')->name('user.update');
     });
     
 });

@@ -15,7 +15,7 @@
                 </x-primary-button-link>
             </div>
         </div>
-        <x-auth-session-status class="mt-4" :status="session('message')" />
+        <x-auth-session-status class="mb-4" :status="session('message')" />
     </x-slot>
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
         <x-table :tabledata="$users" />
