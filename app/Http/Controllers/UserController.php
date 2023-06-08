@@ -61,13 +61,15 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(UserUpdateRequest $request,string $id)
     {
-        dd($request->all());
-        // $user->update([
-        //     'name' => $request->name,
-        //     'email' => $request->email
-        // ]);
+
+        $user = User::findOrFail($id);
+        
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email
+        ]);
 
         return redirect()->route('user.index')->with('message', "User updated Successfully!");
     }
@@ -77,6 +79,11 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        if(auth()->user()->id == $id){
+            return redirect()->route('user.index')->with('message', 'You are deleting yourself.');
+        }
+        $user->delete();
+        return redirect()->route('user.index')->with('message', 'User Deleted Successfully');
     }
 }
