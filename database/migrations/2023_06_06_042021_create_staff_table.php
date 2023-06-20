@@ -14,10 +14,7 @@ return new class extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->string('phone');
-            // $table->foreignId('country_id')->constrained();
             $table->foreignId('country_id')->nullable()->constrained(table: 'countries', indexName: 'staff_country_id');
-            // $table->unsignedBigInteger('country_id')->nullable();
-            // $table->foreign('country_id')->references('id')->on('countries');
             $table->foreignId('state_id')->constrained();
             $table->foreignId('city_id')->constrained();
             $table->char('zip_code');

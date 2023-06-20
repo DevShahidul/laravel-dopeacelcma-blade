@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('country_id')->nullable()->constrained(table: 'countries', indexName: 'ngos_country_id');
-            // $table->unsignedBigInteger('country_id')->nullable();
-            // $table->foreign('country_id')->references('id')->on('countries');
             $table->foreignId('state_id')->constrained();
             $table->foreignId('city_id')->constrained();
             $table->char('zip_code');

@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\LearningCenterController;
 use App\Http\Controllers\NgoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\StateController;
 use App\Http\Controllers\SystemManageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -23,10 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function (){
         return view('pages.dashboard');
@@ -44,10 +42,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/staff', 'index')->name('staff.index');
         Route::get('/staff/create', 'create')->name('staff.create');
     });
-
-    Route::controller(LearningCenterController::class)->group(function(){
-        Route::get('/learning-center', 'index')->name('learningCenter.index');
-    });
     
     Route::controller(UserController::class)->group(function(){
         Route::get('/user', 'index')->name('user.index');
@@ -59,6 +53,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('/user/{id}', 'destroy')->name('user.destroy');
     });
     
+    Route::resource('learning-centers', LearningCenterController::class);
+    Route::resource('countries', CountryController::class);
+    Route::resource('states', StateController::class);
 });
 
 Route::middleware('auth')->group(function () {

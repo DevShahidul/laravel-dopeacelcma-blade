@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="my-6 flex items-center justify-between">
             <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                {{ __('User') }}
+                {{ __('Country') }}
             </h2>
         </div>
         <nav class="flex mb-6" aria-label="Breadcrumb">
@@ -16,7 +16,7 @@
                 <li>
                     <div class="flex items-center">
                         <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                        <a href="{{ route('user.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{ __('Users')}}</a>
+                        <a href="{{ route('countries.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{ __('Countries')}}</a>
                     </div>
                 </li>
                 <li aria-current="page">
@@ -29,47 +29,30 @@
         </nav>
     </x-slot>
     <div class="max-w-full mb-6 w-5/12 mx-auto bg-white shadow-md dark:bg-gray-800 rounded-lg p-6">
-        <h3 class="mb-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"> {{ __('Create new User')}} </h3>
+        <h3 class="mb-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"> {{ __('Create new Country')}} </h3>
         <!-- General elements -->
-        <form method="POST" action="{{ route('user.store') }}">
+        <form method="POST" action="{{ route('countries.store') }}">
             @csrf
-        <!-- Name -->
-        <div class="block text-sm">
+            <!-- Name -->
+            <div class="block text-sm">
                 <x-input-label for="name" :value="__('Name')" />
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
 
-            <!-- Email Address -->
+            <!-- Country code -->
             <div class="block mt-4 text-sm">
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <x-input-label for="code" :value="__('Country Code')" />
+                <x-text-input id="code" class="block mt-1 w-full" type="text" name="code" :value="old('code')" required autocomplete="code" />
+                <x-input-error :messages="$errors->get('code')" class="mt-2" />
             </div>
 
-            <!-- Password -->
+            <!-- Country phone code -->
             <div class="block mt-4 text-sm">
-                <x-input-label for="password" :value="__('Password')" />
-
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <x-input-label for="phonecode" :value="__('Phone Code')" />
+                <x-text-input id="phonecode" class="block mt-1 w-full" type="text" name="phonecode" :value="old('code')" required autocomplete="phonecode" />
+                <x-input-error :messages="$errors->get('phonecode')" class="mt-2" />
             </div>
-
-            <!-- Confirm Password -->
-            <div class="block mt-4 text-sm">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
-
-                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-            </div>
-
             <x-primary-button class="mt-4 w-full">
                 {{ __('Create') }}
             </x-primary-button>

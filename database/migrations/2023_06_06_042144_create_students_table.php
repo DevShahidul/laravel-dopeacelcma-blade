@@ -21,9 +21,6 @@ return new class extends Migration
             $table->date('birth_date');
             $table->integer('age');
             $table->foreignId('country_id')->nullable()->constrained(table: 'countries', indexName: 'students_country_id');
-            // $table->foreignId('country_id')->constrained();
-            // $table->unsignedBigInteger('country_id')->nullable();
-            // $table->foreign('country_id')->references('id')->on('countries');
             $table->foreignId('state_id')->constrained();
             $table->foreignId('city_id')->constrained();
             $table->char('zip_code');

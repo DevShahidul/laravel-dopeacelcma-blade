@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('states', function (Blueprint $table) {
             $table->id();
             $table->foreignId('country_id')->nullable()->constrained(table: 'countries', indexName: 'states_country_id');
-            // $table->unsignedBigInteger('country_id')->nullable();
-            // $table->foreign('country_id')->references('id')->on('countries');
             $table->string('name');
             $table->timestamps();
         });
