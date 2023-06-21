@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\LearningCenterController;
 use App\Http\Controllers\NgoController;
@@ -55,6 +56,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     
     Route::resource('learning-centers', LearningCenterController::class);
     Route::resource('countries', CountryController::class);
+    Route::resource('cities', CityController::class);
     Route::resource('states', StateController::class);
 });
 

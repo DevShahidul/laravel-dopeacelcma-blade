@@ -39,7 +39,8 @@
               </button>
                 <ul x-cloak x-show="isPagesMenuOpen" x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0" class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900" aria-label="submenu">
                     <x-sidebar-dropdown-item :href="route('countries.index')">{{ __('Countries')}}</x-sidebar-dropdown-item>
-                    <x-sidebar-dropdown-item :href="route('states.index')">{{ __('State')}}</x-sidebar-dropdown-item>
+                    <x-sidebar-dropdown-item :href="route('states.index')">{{ __('States')}}</x-sidebar-dropdown-item>
+                    <x-sidebar-dropdown-item :href="route('cities.index')">{{ __('Cities')}}</x-sidebar-dropdown-item>
                 </ul>
             </li>
             <x-sidebar-link :href="route('ngo.index')" :active="request()->routeIs('ngo.index')" >
