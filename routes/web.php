@@ -5,6 +5,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\LearningCenterController;
 use App\Http\Controllers\NgoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\SystemManageController;
@@ -32,18 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     Route::get('/system-management', [SystemManageController::class, 'index'])->name('system.index');
-
-    Route::controller(NgoController::class)->group(function(){
-        Route::get('/ngo', 'index')->name('ngo.index');
-        Route::get('/ngo/create', 'create')->name('ngo.create');
-        Route::post('/ngo/create', 'store')->name('ngo.store');
-    });
-
-    Route::controller(StaffController::class)->group(function(){
-        Route::get('/staff', 'index')->name('staff.index');
-        Route::get('/staff/create', 'create')->name('staff.create');
-    });
-    
+ 
     Route::controller(UserController::class)->group(function(){
         Route::get('/user', 'index')->name('user.index');
         Route::post('/user', 'store')->name('user.store');
@@ -55,9 +45,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
     
     Route::resource('learning-centers', LearningCenterController::class);
+    Route::resource('sessions', SessionController::class);
     Route::resource('countries', CountryController::class);
     Route::resource('cities', CityController::class);
     Route::resource('states', StateController::class);
+    Route::resource('staff', StaffController::class);
+    Route::resource('ngos', NgoController::class);
 });
 
 Route::middleware('auth')->group(function () {

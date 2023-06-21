@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('learning_center_id')->constrained();
             $table->timestamps();
         });
     }

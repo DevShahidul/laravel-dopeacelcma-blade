@@ -11,7 +11,11 @@ class City extends Model
 
     protected $fillable = ['state_id', 'name'];
 
-    function state(){
+    public function state(){
         return $this->belongsTo(State::class);
+    }
+
+    public function ngos(){
+        return $this->hasMany(Ngo::class);
     }
 }

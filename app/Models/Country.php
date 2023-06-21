@@ -38,7 +38,7 @@ class Country extends Model
     public function learningCenters(){
         return $this->hasMany(LearningCenter::class);
     }
-
+    
     public function ngos(){
         return $this->hasMany(Ngo::class);
     }
