@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LearningCenterStoreRequest;
+use App\Models\City;
+use App\Models\Country;
 use App\Models\LearningCenter;
+use App\Models\Ngo;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -27,7 +31,12 @@ class LearningCenterController extends Controller
      */
     public function create(): View
     {
-        return view('pages.learning-center.create');
+
+        $countries = Country::all();
+        $states = State::all();
+        $cities = City::all();
+        $ngos = Ngo::all();
+        return view('pages.learning-center.create', compact(['countries', 'states', 'cities', 'ngos']));
     }
 
     /**
@@ -53,7 +62,11 @@ class LearningCenterController extends Controller
      */
     public function edit(LearningCenter $learningCenter)
     {
-        return view('pages.learning-center.edit', compact('learningCenter'));
+        $countries = Country::all();
+        $states = State::all();
+        $cities = City::all();
+        $ngos = Ngo::all();
+        return view('pages.learning-center.edit', compact('learningCenter', 'ngos', 'countries', 'states', 'cities'));
     }
 
     /**

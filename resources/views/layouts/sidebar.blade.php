@@ -42,6 +42,7 @@
                     <x-sidebar-dropdown-item :href="route('states.index')">{{ __('States')}}</x-sidebar-dropdown-item>
                     <x-sidebar-dropdown-item :href="route('cities.index')">{{ __('Cities')}}</x-sidebar-dropdown-item>
                     <x-sidebar-dropdown-item :href="route('sessions.index')">{{ __('Sessions')}}</x-sidebar-dropdown-item>
+                    <x-sidebar-dropdown-item :href="route('designations.index')">{{ __('Designations')}}</x-sidebar-dropdown-item>
                 </ul>
             </li>
             <x-sidebar-link :href="route('ngos.index')" :active="request()->routeIs('ngos.index')" >

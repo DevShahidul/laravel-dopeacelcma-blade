@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\LearningCenterController;
 use App\Http\Controllers\NgoController;
 use App\Http\Controllers\ProfileController;
@@ -51,6 +52,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('states', StateController::class);
     Route::resource('staff', StaffController::class);
     Route::resource('ngos', NgoController::class);
+    Route::resource('designations', DesignationController::class);
 });
 
 Route::middleware('auth')->group(function () {
