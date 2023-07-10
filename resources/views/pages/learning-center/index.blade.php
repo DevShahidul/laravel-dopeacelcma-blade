@@ -45,6 +45,7 @@
                 </x-primary-button-link>
             </div>
         </div>
+        <x-auth-session-status class="mb-4" :status="session('message')" />
     </x-slot>
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
         <div class="w-full overflow-x-auto">

@@ -11,7 +11,7 @@ class StaffStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,17 @@ class StaffStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'phone' => ['required', 'string', 'max:60'],
+            'country_id' => ['required'],
+            'state_id' => ['required'],
+            'city_id' => ['required'],
+            'zip_code' => ['required', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'ngo_id' => ['required'],
+            'user_id' => ['required'],
+            'designation_id' => ['required'],
+            'facebook_url' => ['required'],
+            'whatsapp_number' => ['required'],
         ];
     }
 }

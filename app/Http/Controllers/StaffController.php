@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StaffStoreRequest;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Designation;
 use App\Models\Ngo;
 use App\Models\Staff;
 use App\Models\State;
@@ -36,7 +37,8 @@ class StaffController extends Controller
         $cities = City::all();
         $ngos = Ngo::all();
         $users = User::all();
-        return view('pages.staff.create', compact(['countries', 'states', 'cities', 'ngos', 'users']));
+        $designations = Designation::all();
+        return view('pages.staff.create', compact(['countries', 'states', 'cities', 'ngos', 'users', 'designations']));
     }
 
     /**
@@ -61,7 +63,13 @@ class StaffController extends Controller
      */
     public function edit(Staff $staff): View
     {
-        return view('pages.staff.edit', compact('staff'));
+        $countries = Country::all();
+        $states = State::all();
+        $cities = City::all();
+        $ngos = Ngo::all();
+        $users = User::all();
+        $designations = Designation::all();
+        return view('pages.staff.edit', compact(['staff', 'countries', 'states', 'cities', 'ngos', 'users', 'designations']));
     }
 
     /**
