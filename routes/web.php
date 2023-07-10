@@ -9,7 +9,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StateController;
-use App\Http\Controllers\SystemManageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,19 +31,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function (){
         return view('pages.dashboard');
     })->name('dashboard');
-
-    Route::get('/system-management', [SystemManageController::class, 'index'])->name('system.index');
- 
-    Route::controller(UserController::class)->group(function(){
-        Route::get('/user', 'index')->name('user.index');
-        Route::post('/user', 'store')->name('user.store');
-        Route::get('/user/create', 'create')->name('user.create');
-        Route::get('/user/show', 'show')->name('user.show');
-        Route::get('/user/edit/{id}', 'edit')->name('user.edit');
-        Route::put('/user/update/{id}', 'update')->name('user.update');
-        Route::delete('/user/{id}', 'destroy')->name('user.destroy');
-    });
     
+    Route::resource('user', UserController::class);
     Route::resource('learning-centers', LearningCenterController::class);
     Route::resource('sessions', SessionController::class);
     Route::resource('countries', CountryController::class);

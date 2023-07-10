@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StaffStoreRequest;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\Ngo;
 use App\Models\Staff;
+use App\Models\State;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -16,7 +21,7 @@ class StaffController extends Controller
     {
         $staff = Staff::all();
         if($request->has('search')){
-            $staff = Staff::where('phone', 'like', "%{$request->search}%")->get();
+            $staff = Staff::where('name', 'like', "%{$request->search}%")->orWhere('phone', 'like', "%{$request->search}%")->orWhere('country', 'like', "%{$request->search}%")->get();
         }
         return view('pages.staff.index', compact('staff'));
     }
@@ -26,7 +31,12 @@ class StaffController extends Controller
      */
     public function create(): View
     {
-        return view('pages.staff.create');
+        $countries = Country::all();
+        $states = State::all();
+        $cities = City::all();
+        $ngos = Ngo::all();
+        $users = User::all();
+        return view('pages.staff.create', compact(['countries', 'states', 'cities', 'ngos', 'users']));
     }
 
     /**

@@ -20,11 +20,11 @@ return new class extends Migration
             $table->foreignId('city_id')->constrained();
             $table->char('zip_code');
             $table->string('address');
-            $table->enum('type', ['coaching', 'pre_school']);
+            $table->enum('type', ['coaching', 'pre_school'])->default('pre_school');
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      */
